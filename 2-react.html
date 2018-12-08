@@ -6,15 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TI2 - Class 1 - React Elements</title>
 
-    <!-- TODO: Add a script tag referencing "react.development.js" -->
-    <!-- TODO: Add a script tag referencing "react-dom.development.js" -->
+    <!-- Add a script tag referencing "react.development.js" -->
+    <script src="js/react.development.js"></script>
+    <!-- Add a script tag referencing "react-dom.development.js" -->
+    <script src="js/react-dom.development.js"></script>
   </head>
   <body>
-    <!-- TODO: Create an empty div element with the ID "app" -->
+    <!-- Create an empty div element with the ID "app" -->
+    <div id="app"></div>
 
     <!--
-      TODO: Create a script tag here, and with JavaScript and React, add a "p" to the
+      Create a script tag here, and with JavaScript and React, add a "p" to the
       div element created above. The p should have the text "Hello, world!"
+
+      Notes:
+      - public React.Element React.createElement(String tagName, Object props, Anything... contents);
+      - public void ReactDOM.render(React.Element element, HTML.Element renderAt);
     -->
+    <script>
+      let hello = React.createElement("p", {}, "Hello, world");
+
+      let app = document.querySelector("#app");
+
+      ReactDOM.render(hello, app);
+    </script>
   </body>
 </html>

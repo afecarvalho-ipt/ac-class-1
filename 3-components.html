@@ -11,13 +11,37 @@
   </head>
 
   <body>
-    <!-- TODO: Create an empty div element with the ID "app" -->
+    <div id="app"></div>
 
     <!--
-      TODO: Create a script tag here, and with JavaScript, add two "p"s to the
+      Create a script tag here, and with JavaScript and React, add two "p"s to the
       div element created above.
       The first span should have the text "Hello, TI2",
       and the second should have the text "Hello, React".
+
+      Notes:
+      - ReactDOM.render() replaces the contents of the DOM node that it uses. You'll need to find a way around that.
+      - ReactDOM.render() doesn't accept Components (like Hello), only Elements.
+          Remember: how do you create a React Element from a component?
+      - React Component functions MUST start with an UPPERCASE letter, like a class.
+      - The React.createElement() function supports multiple contents, by adding more arguments at the end.
+          Perhaps you can make an element that wraps others?
     -->
+    <script>
+      function Hello(props) {
+        let message = React.createElement("p", {}, "Hello, " + props.name);
+
+        return message;
+      }
+
+      let app = document.querySelector("#app");
+
+      let helloReact = React.createElement(Hello, { name: "React" });
+      let helloTI2 = React.createElement(Hello, { name: "TI2" });
+
+      let helloEveryone = React.createElement("div", {}, helloReact, helloTI2);
+
+      ReactDOM.render(helloEveryone, app);
+    </script>
   </body>
 </html>

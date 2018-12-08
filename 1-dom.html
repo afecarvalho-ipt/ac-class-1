@@ -7,11 +7,21 @@
     <title>TI2 - Class 1 - DOM</title>
   </head>
   <body>
-    <!-- TODO: Create an empty div element with the ID "app" -->
+    <!-- Create an empty div element with the ID "app" -->
+    <div id="app"></div>
 
     <!--
-      TODO: Create a script tag here, and with JavaScript, add a "p" to the
+      Create a script tag here, and with JavaScript, add a "p" to the
       div element created above. The p should have the text "Hello, world!"
     -->
+    <script>
+      let hello = document.createElement("p");
+
+      hello.textContent = "Hello, world";
+
+      let app = document.querySelector("#app");
+
+      app.appendChild(hello);
+    </script>
   </body>
 </html>
