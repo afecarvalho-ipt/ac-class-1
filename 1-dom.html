@@ -15,12 +15,17 @@
       div element created above. The p should have the text "Hello, world!"
     -->
     <script>
+      // Create an empty <p> element.
       let hello = document.createElement("p");
 
+      // Set the <p>'s text content to "Hello, world" by using the textContent
+      // property (and not innerHTML, because this isn't HTML)
       hello.textContent = "Hello, world";
 
+      // Grab a reference to the <div> created above.
       let app = document.querySelector("#app");
 
+      // Put the <p> inside the <div>.
       app.appendChild(hello);
     </script>
   </body>

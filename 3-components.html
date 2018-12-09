@@ -28,19 +28,51 @@
           Perhaps you can make an element that wraps others?
     -->
     <script>
+      /**
+       * A React Component that says hello to someone.
+       * props:
+       *   - name: The name to which to say hello.
+       * returns:
+       *   - <p> element with a message that says "Hello".
+       */
       function Hello(props) {
+        // Create a React Element for a <p> that has the message.
         let message = React.createElement("p", {}, "Hello, " + props.name);
 
+        // React Components return React Elements.
         return message;
       }
 
+      // Grab a reference to the <div> on which we'll put our app.
       let app = document.querySelector("#app");
 
+      // React Components are used with React.createElement.
+      // If we want to get a "Hello" React Element, we use it like this:
       let helloReact = React.createElement(Hello, { name: "React" });
+
+      // We can create as many Component Instances (i.e., Elements) as we want. It's like new() in Java,
+      // where the class is the Component, and new() gives the Element (object) from the class.
       let helloTI2 = React.createElement(Hello, { name: "TI2" });
 
+      // If you notice here, we pass 4 arguments to React.createElement.
+      // This function allows as many arguments as you need, as long as the 3rd argument onwards
+      // are React Elements. These elements are made "children" of the <div> element we create.
+      // This gives us:
+      // <div>
+      //   <Hello name="React" />
+      //   <Hello name="TI2" />
+      // </div>
       let helloEveryone = React.createElement("div", {}, helloReact, helloTI2);
 
+      // Put the <p> element that's saved in the "helloEveryone" variable inside the <div> that
+      // we created above.
+      // ReactDOM.render only receives two arguments: The React Element we want to render,
+      // and the DOM node (a <div>, a <p>, a <span>, etc.) where we want to put it on.
+      // This gives us the following HTML (inside the <div> that already exists):
+      // <div> <!-- This is from "helloEveryone" -->
+      //   <p>Hello, React</p> <!-- This is from <Hello name="React" /> -->
+      //   <p>Hello, TI2</p> <!-- This is from <Hello name="TI2" /> -->
+      // </div>
       ReactDOM.render(helloEveryone, app);
     </script>
   </body>

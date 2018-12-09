@@ -21,13 +21,27 @@
 
       Notes:
       - public React.Element React.createElement(String tagName, Object props, Anything... contents);
-      - public void ReactDOM.render(React.Element element, HTML.Element renderAt);
+      - public void ReactDOM.render(React.Element element, DOM.Element renderAt);
     -->
     <script>
+      // Create a <p> element with the text "Hello, world".
+      // We use the React.createElement function to create the <p> element
+      // by specifying the TAG NAME in quotes in the first argument.
+      // The second argument, {}, is the props. Here we can set things like style, event listeners, and so on.
+      // props is ALWAYS an object.
+      // The following argument, "Hello, world", represents the "children", that is, the content
+      // of the <p> element. It can be strings or more React Elements.
       let hello = React.createElement("p", {}, "Hello, world");
 
+      // Grab a reference to the <div> on which we'll put our app.
       let app = document.querySelector("#app");
 
+      // Put the <p> element that's saved in the "hello" variable inside the <div> that
+      // we created above.
+      // ReactDOM.render only receives two arguments: The React Element we want to render,
+      // and the DOM node (a <div>, a <p>, a <span>, etc.) where we want to put it on.
+      // This gives us the following HTML, inside the <div> we created on the HTML above:
+      // <p>Hello, world</p>
       ReactDOM.render(hello, app);
     </script>
   </body>
