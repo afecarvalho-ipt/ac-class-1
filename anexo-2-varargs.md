@@ -1,6 +1,6 @@
 # Argumentos variáveis (varargs)
 
-Varargs, ou argumentos variáveis, é a capacidade de uma função de receber um número variável de argumentos, tal como o `React.createElement`. Esta funcionalidade foi introduzida no JavaScript na versão ES6, ou ES2015.
+Varargs, ou argumentos variáveis, é a capacidade de uma função de receber um número variável de argumentos, tal como o `React.createElement`. Esta funcionalidade foi introduzida no JavaScript na versão ES6, ou ES2015. Esta funcionalidade também tem o nome de "spread", ou "splat".
 
 A sintaxe é `...nomeDoArgumento`, e dentro da função, o valor será **sempre** um array. Mesmo quando não se passam argumentos (em que aí, o array está vazio).
 
