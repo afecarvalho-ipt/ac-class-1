@@ -26,12 +26,14 @@ teste();
 Se se tentar fazer código semelhante em Java ou c#, o código não é válido, porque se está a re-declarar uma variável. No entanto, em C, podemos escrever o seguinte código (válido):
 
 ```c
+#include <stdio.h>
+
 void main()
 {
     for (int i = 0; i < 5; i++)
     {
         int i = 10;
-        printf("%d", &i);
+        printf("%d\n", i);
     }
 }
 
@@ -43,7 +45,7 @@ void main()
 // - 10
 ```
 
-Para compilar e testar, podem usar os seguintes comandos:
+Para compilar e testar, podem usar os seguintes comandos (em Linux):
 
 ```bash
 $ gcc teste.c -o teste
