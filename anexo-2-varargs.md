@@ -39,3 +39,18 @@ soma(...nums); // 25
 // Atenção: Isto é permitido, mas dá asneira!
 soma(nums); // '01,2,3,4,5,10'
 ```
+
+# Atenção!
+
+Um argumento com número variável de valores tem que ser sempre o **último** da função. Não é permitido ter outros argumentos após este.
+
+Ou seja:
+
+```javascript
+function soma(x, ...nums) {} // OK, precisa de pelo menos 1 argumento
+function soma(x, y, ...nums) {} // OK, precisa de pelo menos 2 argumentos
+function soma(...nums) {} // OK, zero ou mais
+
+function soma(...nums, x) {} // ERRO
+function soma(x, ...nums, y) {} // ERRO
+```
