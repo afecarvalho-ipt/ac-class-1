@@ -8,10 +8,29 @@
   </head>
   <body>
     <!-- TODO: Cria um div vazio, e dá-lhe o ID "app" -->
+    <div id="app"></div>
 
     <!--
       TODO: Cria uma tag script aqui, e com JavaScript, adiciona um parágrafo
       dentro do div criado acima. o parágrafo deve ter o texto "Olá, mundo!"
     -->
+
+    <script>
+      let app = document.querySelector("#app");
+
+      console.time("innerHTML");
+
+      for (let i = 0; i < 1000; i++) {
+        let x = document.createElement("p");
+        x.textContent = i;
+
+        x.style.color = "blue";
+        x.style.fontFamily = "Arial";
+
+        app.appendChild(x);
+      }
+
+      console.timeEnd("innerHTML");
+    </script>
   </body>
 </html>
