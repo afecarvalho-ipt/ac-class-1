@@ -22,5 +22,27 @@
 
       Vê os exemplos no README.
     -->
+    <script>
+      function Ola(props) {
+        return React.createElement(
+          "p",
+          { style: { color: props.cor } },
+          "Olá, " + props.nome + "!"
+        );
+      }
+
+      let olaTi2 = React.createElement(Ola, { nome: "TI2", cor: "blue" });
+      let olaReact = React.createElement(Ola, { nome: "React", cor: "red" });
+
+      let exemplo = React.createElement(
+        "div",
+        null,
+        // Children
+        olaTi2,
+        olaReact
+      );
+
+      ReactDOM.render(exemplo, document.getElementById("app"));
+    </script>
   </body>
 </html>
