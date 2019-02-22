@@ -22,5 +22,33 @@
 
       Vê os exemplos no README.
     -->
+    <script>
+      let app = document.getElementById("app");
+
+      function Ola(props) {
+        let cor = "black";
+
+        if (props.cor === "vermelho") {
+          cor = "red";
+        } else if (props.cor === "azul") {
+          cor = "blue";
+        }
+
+        return React.createElement(
+          "p",
+          { style: { color: cor } },
+          "Olá, " + props.nome
+        );
+      }
+
+      let exemplo = React.createElement(
+        "div",
+        null,
+        React.createElement(Ola, { nome: "TI2", cor: "azul" }),
+        React.createElement(Ola, { nome: "React", cor: "vermelho" })
+      );
+
+      ReactDOM.render(exemplo, app);
+    </script>
   </body>
 </html>

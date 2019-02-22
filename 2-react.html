@@ -7,10 +7,13 @@
     <title>TI2 - Class 1 - React Elements</title>
 
     <!-- TODO: Adiciona uma tag script referenciando o ficheiro "react.development.js" -->
+    <script src="js/react.development.js"></script>
     <!-- TODO: Adiciona uma tag script referenciando o ficheiro "react-dom.development.js" -->
+    <script src="js/react-dom.development.js"></script>
   </head>
   <body>
     <!-- TODO: Cria um div vazio, e dá-lhe o ID "app" -->
+    <div id="app">Se estás a ver isto, algo se passa!</div>
 
     <!--
       TODO: Cria uma tag script aqui, e com JavaScript e React, adiciona um elemento "p" ao div
@@ -18,5 +21,16 @@
 
       Vê os exemplos no README.
     -->
+    <script>
+      let app = document.querySelector("#app");
+
+      let exemplo = React.createElement(
+        "p",
+        { style: { fontFamily: "Arial", color: "blue" } },
+        "Olá, mundo!"
+      );
+
+      ReactDOM.render(exemplo, app);
+    </script>
   </body>
 </html>
