@@ -54,3 +54,37 @@ ReactDOM.render(
   document.body
 );
 ```
+
+## Posso criar funções a partir de funções:
+
+Isto tem alguns usos. Por agora, fica este exemplo:
+
+```javascript
+function somador(n1) {
+  return function soma(n2) {
+    return n1 + n2;
+  };
+}
+
+let soma2 = somador(2);
+
+// 'soma2' contém uma função, com 1 parâmetro. E vai somar 2 ao valor passado
+// por parâmetro
+console.log(soma2(10)); // 12
+console.log(soma2(15)); // 17
+
+let soma5 = somador(5);
+
+// 'soma5' é uma função que soma 5 ao seu argumento.
+console.log(soma5(5)); // 10
+```
+
+Às vezes, encontram-se termos relacionados com isto, como:
+
+- Currying
+- Partial functions
+- Higher Order Functions
+
+## Refereências:
+
+- [Douglas Crockford - Act III - Function the Ultimate](https://www.youtube.com/watch?v=ya4UHuXNygM)
