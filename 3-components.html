@@ -22,5 +22,17 @@
 
       Vê os exemplos no README.
     -->
+    <script>
+      function Ola(props) {
+        return React.createElement("p", null, "Olá, " + props.nome);
+      }
+
+      let olaTi2 = React.createElement(Ola, { nome: "TI2" });
+      let olaReact = React.createElement(Ola, { nome: "React" });
+
+      let exemplo = React.createElement("div", null, olaTi2, olaReact);
+
+      ReactDOM.render(exemplo, document.getElementById("app"));
+    </script>
   </body>
 </html>
